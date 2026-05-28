@@ -11,14 +11,14 @@ int main(int argc, const char* argv[]) {
     char tmp[2048];
     while(fgets(line, sizeof(line), fp) != NULL){
         strcpy(tmp, line);
-        char *token = strtok(tmp, " \t\r\n");
+        char *token = strtok(tmp, " \t\r\n.,");
         if (token == NULL) continue;
         while(token != NULL){
             if(strcmp(token, target_str) == 0){
                 printf("%s", line);
                 break;
             }
-            token = strtok(NULL, " \t\r\n");
+            token = strtok(NULL, " \t\r\n.,");
         }
     }
 
