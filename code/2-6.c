@@ -7,8 +7,8 @@ int main(int argc, const char* argv[]) {
 
     FILE* fp = fopen(argv[1], "r");
     const char* target_str = argv[2];
-    char line[256];
-    char tmp[256];
+    char line[2048];
+    char tmp[2048];
     while(fgets(line, sizeof(line), fp) != NULL){
         strcpy(tmp, line);
         char *token = strtok(tmp, " \t\r\n");
