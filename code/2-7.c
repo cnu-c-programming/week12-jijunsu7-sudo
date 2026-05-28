@@ -10,7 +10,11 @@ typedef struct config {
 } Config;
 
 void config_parser(Config* config_ptr) {
-
+    FILE* fp = fopen("config.txt", "r");
+    fscanf(fp, "InputFileName=%s\n", config_ptr->InputFileName);
+    fscanf(fp, "Options=%d\n", &(config_ptr->Options));
+    fscanf(fp, "SectionName=%s\n", config_ptr->SectionName);
+    fscanf(fp, "Address=%llx\n", &(config_ptr->Address));
 }
 
 int main(int argc, const char* argv[]) {
